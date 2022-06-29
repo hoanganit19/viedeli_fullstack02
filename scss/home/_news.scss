@@ -1,0 +1,38 @@
+.news-box{
+    @include section-base;
+
+    img{
+        @media screen and (max-width: 576px) {
+            width: 100%;
+        }
+    }
+
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2.14rem;
+        font-weight: bold;
+    }
+
+    .news-box__lists{
+        margin-top: 30px;
+
+        .news-box--item{
+            .item__category{
+                font-size: 0.92rem;
+                color: #80765f;
+                text-transform: uppercase;
+                margin-top: 15px;
+            }
+
+            .item__title{
+                font-size: 1.42rem;
+                font-weight: bold;
+
+                a{
+                    color: #171717;
+                }
+            }
+        }
+    }
+}

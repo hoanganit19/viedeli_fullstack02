@@ -1,0 +1,44 @@
+.banner-box{
+    position: relative;
+    .banner-box__controls{
+        .banner-box__controls--prev{
+            @include vertical-middle;
+            @include arrow-button;
+            left: 5px;
+           
+        }
+
+        .banner-box__controls--next{
+            @include vertical-middle;
+            @include arrow-button;
+            right: 5px;
+        }
+    }
+
+    .banner-box__dots{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 30px;
+        span{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: transparent;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+
+            &.active{
+                background: #fff;
+            }
+
+            &:hover{
+                @extend .active;
+            }
+        }
+    }
+}

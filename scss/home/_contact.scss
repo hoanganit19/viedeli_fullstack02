@@ -1,0 +1,118 @@
+.contact-box{
+    .contact-box__image{
+        height: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .contact-box__form{
+        @extend .contact-box__image;
+        background: $primaryColor;
+        color: #fff;
+        padding: 50px;
+
+        @media screen and (max-width: 992px) {
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px){
+            padding: 50px;
+        }
+
+        h2{
+            color: #fff;
+            font-weight: 200;
+            text-align: center;
+            font-size: 2.78rem;
+
+            @media screen and (max-width: 992px) {
+                font-size: 2rem;
+            }
+    
+            @media screen and (max-width: 768px){
+                font-size: 2.78rem;
+            }
+        }
+
+        .contact-box--item{
+
+            margin-bottom: 15px;
+            position: relative;
+
+            &::before{
+                content: '';
+                position: absolute;
+                left: 15px;
+                top: 10px;
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: 100%  !important;
+            }
+
+            $icons: (user: 'user-icon.png', email: 'email-icon.png', phone: 'phone-contact.png');
+
+            @each $name, $image in $icons {
+                &.#{$name}{
+                    &::before{
+                        $imageUrl: '../images/'+$image; 
+                        background: url($imageUrl) no-repeat center center;
+                    }
+                }
+            }
+
+            input{
+                width: 100%;
+                padding: 15px 15px 15px 45px;
+                font-size: 0.85rem;
+                color: #3a3a3a;
+                &::placeholder{
+                    color: #3a3a3a;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        button{
+            background: $secondaryColor;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact-box--hotline{
+            display: flex;
+            justify-content: flex-end;
+
+            &::before{
+                content: '';
+                display: block;
+                width: 31px;
+                height: 31px;
+                background: url('../images/hotline-icon-contact.png') no-repeat;
+                margin-top: 10px;
+                margin-right: 10px;
+            }
+
+            span{
+                display: block;
+                text-transform: uppercase;
+
+                &:first-child{
+                    color: #fff;
+                    font-size: 0.92rem;
+                }
+
+                &:last-child{
+                    color: #fff;
+                    font-size: 1.42rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

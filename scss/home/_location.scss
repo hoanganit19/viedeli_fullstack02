@@ -1,0 +1,59 @@
+.location-box{
+    .location-box__image{
+        height: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .location-box__content{
+        @extend .location-box__image;
+
+        background: $primaryColor;
+        color: #fff;
+
+        padding: 50px 100px;
+
+        @media screen and (max-width: 576px) {
+            padding: 25px 50px;
+        }
+
+        h2{
+            font-weight: 200;
+            font-size: 3.4rem;
+            color: #fff;
+            @media screen and (max-width: 576px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .location-box--readmore{
+            margin-top: 40px;
+            a{
+                color: #fff;
+                display: flex;
+                span{
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    position: relative;
+                    top: 5px;
+                    word-spacing: 3px;
+                    letter-spacing: 3px;
+                }
+                
+                i{
+                    @include arrow-button(transparent, #fff, 1px solid #fff);
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    margin-left: 10px;
+                    font-size: 1.1rem;
+                }
+                
+            }
+        }
+    }
+}
